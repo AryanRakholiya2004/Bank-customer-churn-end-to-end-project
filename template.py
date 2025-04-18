@@ -4,23 +4,23 @@ import logging
 
 logging.basicConfig(level=logging.INFO)
 
-project_name = "datascianceproject"
+project_name = "datascienceproject"
 
 list_of_files = [
     ".github/workflows/.gitkeep",
-    f"src{project_name}/__init__.py",
-    f"src{project_name}/components/__init__.py",
-    f"src{project_name}/components/data_ingestion.py",
-    f"src{project_name}/components/data_transformation.py",
-    f"src{project_name}/components/model_trainer.py",
-    f"src{project_name}/components/model_evaluation.py",
-    f"src{project_name}/piplines/__init__.py",
-    f"src{project_name}/piplines/training_pipeline.py",
-    f"src{project_name}/piplines/prediction_pipeline.py",
-    f"src{project_name}/exception.py",
-    f"src{project_name}/logger.py",
-    f"src{project_name}/utils.py",
-    "app.py"
+    f"src/{project_name}/__init__.py",
+    f"src/{project_name}/components/__init__.py",
+    f"src/{project_name}/components/data_ingestion.py",
+    f"src/{project_name}/components/data_transformation.py",
+    f"src/{project_name}/components/model_trainer.py",
+    f"src/{project_name}/components/model_evaluation.py",
+    f"src/{project_name}/piplines/__init__.py",
+    f"src/{project_name}/piplines/training_pipeline.py",
+    f"src/{project_name}/piplines/prediction_pipeline.py",
+    f"src/{project_name}/exception.py",
+    f"src/{project_name}/logger.py",
+    f"src/{project_name}/utils.py",
+    "app.py",
     "requirements.txt",
     "setup.py",
     "README.md"
