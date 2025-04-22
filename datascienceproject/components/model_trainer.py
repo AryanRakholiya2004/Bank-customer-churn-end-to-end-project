@@ -1,0 +1,105 @@
+import os
+import sys
+
+from dataclasses import dataclass
+
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier
+from xgboost import XGBClassifier
+from catboost import CatBoostClassifier
+from lightgbm import LGBMClassifier
+
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+
+from datascienceproject.exception import CustomException
+from datascienceproject.logger import logging
+from datascienceproject.components.model_evaluation import ModelEvaluation
+from datascienceproject.utils import save_object
+
+@dataclass
+class ModelTrainerConfig:
+    train_model_file_path = os.path.join('artifacts', 'model.pkl')
+
+class ModelTrainer:
+    def __init__(self):
+        self.model_trainer_config = ModelTrainerConfig()
+
+    def initiate_model_trainer(self, train_array, test_array):
+        try:
+            logging.info('Model Training Stated !')
+            X_train, y_train, X_test, y_test = (
+                train_array[:, :-1],
+                train_array[:, -1],
+                test_array[:, :-1],
+                test_array[:, -1]
+            )
+
+            models = {
+                'Logistic Regression': LogisticRegression(),
+                'Random Forest': RandomForestClassifier(),
+                'Gradient Boosting': GradientBoostingClassifier(),
+                'Decision Tree': DecisionTreeClassifier(),
+                'XGBoost': XGBClassifier(),
+                'CatBoost': CatBoostClassifier(verbose=0),
+                'LightGBM': LGBMClassifier()
+            }
+
+            params = {
+                'Random Forest': {
+                    'n_estimators': [5, 10, 20, 50, 100, 200, 300]
+                    },
+                'Gradient Boosting': {
+                    'n_estimators': [5, 10, 20, 50, 100, 200, 300],
+                    'learning_rate' : [0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5]
+                    },
+                'Decision Tree': {
+                    'max_depth': range(4, 60, 2)
+                    },
+                'XGBoost': {
+                    'n_estimators': [5, 10, 20, 50, 100, 200, 300],
+                    'learning_rate' : [0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5]
+                    },
+                'CatBoost': {
+                    'depth': [4, 6, 8, 10, 12],
+                    'n_estimators': [5, 10, 20, 50, 100, 200, 300],
+                    },
+                'Logistic Regression': {}
+            }
+
+            # Model Evaluation
+            model_eval = ModelEvaluation()
+
+            models_report, best_model, best_model_name = model_eval.evaluate_models(X_train, y_train, X_test, y_test, models, params)
+            logging.info(f'Model Evaluation Completed !{models_report}')
+
+            # Saving the best model
+            best_model_score = max(sorted(models_report.values()))
+            logging.info('Found best scores of models')
+
+            # Finding best model name
+            # best_model_name = list(models_report.keys())[
+            #     list(models_report.values()).index(best_model_score)
+            # ]
+
+            # best_model = models[best_model_name]
+            logging.info('Found best scored model')
+
+            if best_model_score<0.6:
+                logging.info('No best model found !')
+                raise CustomException('No best model found !', sys)
+
+            save_object(
+                file_path=self.model_trainer_config.train_model_file_path,
+                obj=best_model
+            )
+
+            predicted = best_model.predict(X_test)
+            accuracy = accuracy_score(y_test, predicted)
+            logging.info(f'Model evaluation completed, Model - {best_model_name} found with accuracy of {accuracy} !')
+            return accuracy
+            
+        except Exception as ex:
+            raise CustomException(ex, sys)
+        
+        
