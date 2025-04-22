@@ -20,12 +20,13 @@ To develop a machine learning model that identifies customers likely to leave th
 - ├── logs/ # Logging directory 
 - ├── notebook/ 
 - │ └── 1.EDA.ipynb # Exploratory Data Analysis notebook 
+- │ └── 1.MODEL TRAINING.ipynb # Model training notebook 
 - │ └── data/raw.csv # Raw dataset 
 - ├── app.py # Flask API for model inference 
 - ├── setup.py # Package installation script 
 - ├── requirements.txt # List of required Python libraries 
 - ├── README.md # Project documentation 
-- ├── Bank_Churn.csv # Original dataset
+- └── Bank_Churn.csv # Original dataset
 
 
 ---
