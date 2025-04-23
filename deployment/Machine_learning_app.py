@@ -1,9 +1,16 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import os
+
+here = os.path.dirname(__file__)  
+project_root = os.path.abspath(os.path.join(here, "..", ".."))
+
+model_path = os.path.join(project_root, "artifacts", "model.pkl")
+preprocessor_path = os.path.join(project_root, "artifacts", "preprocessor.pkl")
 
 # Load the trained machine learning model
-with open("model.pkl", "rb") as f:
+with open(model_path, "rb") as f:
     model = joblib.load(f)
     print('=x='*50)
     print(model)
@@ -11,7 +18,7 @@ with open("model.pkl", "rb") as f:
     print('=x='*50)
 
 # Load the preprocessor
-with open("preprocessor.pkl", "rb") as f:
+with open(preprocessor_path, "rb") as f:
     preprocessor = joblib.load(f)
     print('=x='*50)
     print(preprocessor)

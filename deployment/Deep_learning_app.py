@@ -2,8 +2,6 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 from tensorflow.keras.models import load_model
-from sklearn.preprocessing import StandardScaler, OneHotEncoder
-from sklearn.compose import ColumnTransformer
 import joblib
 import os
 
