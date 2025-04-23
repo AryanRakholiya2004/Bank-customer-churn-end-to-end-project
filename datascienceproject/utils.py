@@ -6,8 +6,6 @@ import mysql.connector
 from datascienceproject.exception import CustomException
 from datascienceproject.logger import logging
 from dotenv import load_dotenv
-from sklearn.model_selection import GridSearchCV
-from sklearn.metrics import accuracy_score
 import joblib
 
 load_dotenv()

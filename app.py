@@ -21,8 +21,8 @@ if __name__=="__main__":
 
         # Model training
         # model_tainer_config = ModelTrainerConfig()
-        model_trainer = ModelTrainer()
-        print(model_trainer.initiate_model_trainer(train_array=train_array,test_array=test_array))
+        # model_trainer = ModelTrainer()
+        # print(model_trainer.initiate_model_trainer(train_array=train_array,test_array=test_array))
 
         # Deep Learning Model training
         # deep_trainer_config = DeepTrainerConfig()

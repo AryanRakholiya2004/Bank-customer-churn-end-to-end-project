@@ -21,6 +21,7 @@ class DataTransformationConfig:
 class DataTransformation:
     def __init__(self):
         self.data_transformation_config = DataTransformationConfig()
+        self.prepro_obj = None
 
     def get_data_tranformation_instance(self):
         '''
@@ -43,7 +44,7 @@ class DataTransformation:
 
             cat_pipeline = Pipeline(steps=[
                 ('imputer', SimpleImputer(strategy='most_frequent')),
-                ('ohe',OneHotEncoder()),
+                ('ohe', OneHotEncoder()),
                 ('scaler', StandardScaler(with_mean=False))
             ])
 
@@ -87,6 +88,12 @@ class DataTransformation:
 
             x_train_arr = preprocessing_obj.fit_transform(X_train)
             x_test_arr = preprocessing_obj.transform(X_test)
+
+            print('='*36)
+            print('\nPreprocessor information - before return from function')
+            print(preprocessing_obj)
+            print(type(preprocessing_obj))
+            print('='*36)
 
             train_arr = np.c_[x_train_arr, np.array(y_train)]
             test_arr = np.c_[x_test_arr, np.array(y_test)]
