@@ -17,6 +17,7 @@ To develop a machine learning model that identifies customers likely to leave th
 - ├── .dvc/ # Data version control files 
 - ├── artifacts/ # Saved model files and outputs 
 - ├── datascienceproject/ # All ML pipeline scripts (training, evaluation, utils) 
+- ├── deployment/ # Contains Deployable Streamlit apps
 - ├── logs/ # Logging directory 
 - ├── notebook/ 
 - │ └── 1.EDA.ipynb # Exploratory Data Analysis notebook 
@@ -47,10 +48,11 @@ To develop a machine learning model that identifies customers likely to leave th
 
 - Python  
 - Pandas, NumPy, Matplotlib, Seaborn  
-- Scikit-learn  
+- Scikit-learn, tensorflow
 - Flask (for deployment)  
 - DVC (for version control)  
-- Git, GitHub  
+- Mlflow, Dagshub
+- Git, GitHub
 
 ---
 
@@ -69,6 +71,10 @@ Multiple models were tested:
 - Logistic Regression  
 - Decision Tree  
 - Random Forest  
+- Gradient Boosting
+- XGBoost
+- CatBoost
+- LightGBM
 
 Evaluation metrics like accuracy, precision, and recall were used to select the best-performing model.
 
@@ -94,7 +100,7 @@ python app.py
 ---
 
 📌 Status
-🔧 This project is still under development. I'm actively working on refining the pipeline, improving performance, and integrating CI/CD for automated testing and deployment.
+🔧 This project is still under development. I'm actively working on refining the pipeline, improving 📈 performance, and integrating CI/CD for automated 🛠️ testing and 🚀 deployment, also working on 🤖 Neural Network model.
 
 ---
 
