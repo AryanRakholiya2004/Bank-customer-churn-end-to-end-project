@@ -10,6 +10,14 @@ To develop a machine learning model that identifies customers likely to leave th
 
 ---
 
+## 🌄 Previews
+
+### Dashboard Preview
+![image](https://github.com/user-attachments/assets/048b4ff6-a90e-4da5-8a24-0982fc4467e6)
+
+
+---
+
 ## 🪧 Links
 
 - For tracking model scores - <a href="https://dagshub.com/AryanRakholiya2004/Bank-customer-churn-end-to-end-project.mlflow/#/experiments/0?searchFilter=&orderByKey=attributes.start_time&orderByAsc=false&startTime=ALL&lifecycleFilter=Active&modelVersionFilter=All+Runs&datasetsFilter=W10%3D">MLflow </a>
