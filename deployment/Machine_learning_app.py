@@ -4,7 +4,7 @@ import joblib
 import os
 
 here = os.path.dirname(__file__)  
-project_root = os.path.abspath(os.path.join(here, "..", ".."))
+project_root = os.path.abspath(os.path.join(here, ".."))
 
 model_path = os.path.join(project_root, "artifacts", "model.pkl")
 preprocessor_path = os.path.join(project_root, "artifacts", "preprocessor.pkl")
