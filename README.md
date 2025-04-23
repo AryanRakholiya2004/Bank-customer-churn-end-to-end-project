@@ -10,6 +10,11 @@ To develop a machine learning model that identifies customers likely to leave th
 
 ---
 
+## 🪧 Links
+
+- For tracking model scores - <a href="https://dagshub.com/AryanRakholiya2004/Bank-customer-churn-end-to-end-project.mlflow/#/experiments/0?searchFilter=&orderByKey=attributes.start_time&orderByAsc=false&startTime=ALL&lifecycleFilter=Active&modelVersionFilter=All+Runs&datasetsFilter=W10%3D">MLflow </a>
+
+
 ## 📁 Project Structure
 
 - END-TO-END-PROJECT/ 
@@ -38,7 +43,8 @@ To develop a machine learning model that identifies customers likely to leave th
 - 📊 EDA with insightful visualizations
 - 🧠 Feature engineering and model building
 - ⚙️ Hyperparameter tuning with GridSearchCV
-- 🔁 Model tracking and versioning using **DVC**
+- 🔁 Model tracking and versioning using **MLFlow and Dagshub**
+- 💾 **DVC** - Data Version Control and tracking using <a href="https://dvc.org/">**dvc.org**</a>
 - 🔌 Deployed using Flask API (`app.py`)
 - 🧪 Ready to integrate **CI/CD** for automated testing and deployment
 
@@ -79,6 +85,10 @@ Multiple models were tested:
 Evaluation metrics like accuracy, precision, and recall were used to select the best-performing model.
 
 ---
+
+## 💾 Dataset used
+
+🔗 <a href="https://mavenanalytics.io/data-playground?dataStructure=Single%20table&order=date_added%2Cdesc&search=Bank%20Customer%20Churn">Bank Customer Churn</a>
 
 ## 📦 Getting Started
 

@@ -7,6 +7,7 @@ seaborn==0.13.1
 matplotlib==3.8.2
 catboost==1.2.8
 xgboost==3.0.0
+dvc==3.59.1
 mlflow==2.21.3
 dagshub==0.5.9
 tensorflow==2.18.0
