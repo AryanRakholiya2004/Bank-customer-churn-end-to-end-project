@@ -7,7 +7,7 @@ import joblib
 # Load the trained machine learning model
 # model_path = os.path.join(base_dir, "artifacts", "model.pkl")
 # with open(model_path, "rb") as f:
-with open('model.pkl', "rb") as f:
+with open("model.pkl", "rb") as f:
     model = joblib.load(f)
     print('=x='*50)
     print(model)
@@ -17,7 +17,7 @@ with open('model.pkl', "rb") as f:
 # Load the preprocessor
 # preprocessor_path = os.path.join(base_dir, "artifacts", "preprocessor.pkl")
 # with open(preprocessor_path, "rb") as f:
-with open('preprocessor', "rb") as f:
+with open("preprocessor.pkl", "rb") as f:
     preprocessor = joblib.load(f)
     print('=x='*50)
     print(preprocessor)
