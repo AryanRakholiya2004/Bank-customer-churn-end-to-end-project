@@ -3,11 +3,12 @@ import pandas as pd
 import joblib
 import os
 
-base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__),'..'))
+# base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__),'..'))
 
 # Load the trained machine learning model
-model_path = os.path.join(base_dir, "artifacts", "model.pkl")
-with open(model_path, "rb") as f:
+# model_path = os.path.join(base_dir, "artifacts", "model.pkl")
+# with open(model_path, "rb") as f:
+with open('model.pkl', "rb") as f:
     model = joblib.load(f)
     print('=x='*50)
     print(model)
@@ -15,8 +16,9 @@ with open(model_path, "rb") as f:
     print('=x='*50)
 
 # Load the preprocessor
-preprocessor_path = os.path.join(base_dir, "artifacts", "preprocessor.pkl")
-with open(preprocessor_path, "rb") as f:
+# preprocessor_path = os.path.join(base_dir, "artifacts", "preprocessor.pkl")
+# with open(preprocessor_path, "rb") as f:
+with open('preprocessor', "rb") as f:
     preprocessor = joblib.load(f)
     print('=x='*50)
     print(preprocessor)
