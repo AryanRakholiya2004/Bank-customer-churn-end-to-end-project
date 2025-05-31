@@ -24,23 +24,78 @@ To develop a machine learning model that identifies customers likely to leave th
 
 
 ## 📁 Project Structure
-
-- END-TO-END-PROJECT/ 
-- │ 
-- ├── .dvc/ # Data version control files 
-- ├── artifacts/ # Saved model files and outputs 
-- ├── datascienceproject/ # All ML pipeline scripts (training, evaluation, utils) 
-- ├── deployment/ # Contains Deployable Streamlit apps
-- ├── logs/ # Logging directory 
-- ├── notebook/ 
-- │ └── 1.EDA.ipynb # Exploratory Data Analysis notebook 
-- │ └── 1.MODEL TRAINING.ipynb # Model training notebook 
-- │ └── data/raw.csv # Raw dataset 
-- ├── app.py # Flask API for model inference 
-- ├── setup.py # Package installation script 
-- ├── requirements.txt # List of required Python libraries 
-- ├── README.md # Project documentation 
-- └── Bank_Churn.csv # Original dataset
+```bash
+Bank-customer-churn-end-to-end-project/
+├── 📄 README.md
+├── 📄 Bank_Churn.csv
+├── 📄 template.py
+├── 📄 app.py
+├── 📄 requirements.txt
+├── 📄 test.py
+├── 📄 .dvcignore
+├── 📄 setup.py
+├── 📁 datascienceproject
+│   ├── 📄 logger.py
+│   ├── 📄 utils.py
+│   ├── 📄 exception.py
+│   ├── 📄 __init__.py
+│   ├── 📁 components
+│   │   ├── 📄 data_ingestion.py
+│   │   ├── 📄 deep_trainer.py
+│   │   ├── 📄 data_transformation.py
+│   │   ├── 📄 model_trainer.py
+│   │   ├── 📄 model_evaluation.py
+│   │   └── 📄 __init__.py
+│   └── 📁 piplines
+│       ├── 📄 prediction_pipeline.py
+│       ├── 📄 training_pipeline.py
+│       └── 📄 __init__.py
+├── 📁 .devcontainer
+│   └── 📄 devcontainer.json
+├── 📁 notebook
+│   ├── 📄 1 . EDA.ipynb
+│   ├── 📄 2 . MODEL TRAINING.ipynb
+│   ├── 📁 catboost_info
+│   │   ├── 📄 catboost_training.json
+│   │   ├── 📄 learn_error.tsv
+│   │   ├── 📄 time_left.tsv
+│   │   └── 📁 learn
+│   │       └── 📄 events.out.tfevents
+│   └── 📁 data
+│       └── 📄 raw.csv
+├── 📁 artifacts
+│   ├── 📄 deep_model_weights.weights.h5
+│   ├── 📄 deep_model.json
+│   ├── 📄 model.pkl
+│   ├── 📄 preprocessor.pkl
+│   ├── 📄 deep_model_history.txt
+│   ├── 📄 deep_model.h5
+│   ├── 📄 deep_model_summary.txt
+│   ├── 📄 raw.csv.dvc
+│   ├── 📄 test.csv
+│   └── 📄 train.csv
+├── 📁 .dvc
+│   └── 📄 config
+├── 📁 deployment
+│   ├── 📄 model.pkl
+│   ├── 📄 preprocessor.pkl
+│   ├── 📄 Machine_learning_app.py
+│   ├── 📄 Deep_learning_app.py
+│   └── 📄 requirements.txt
+├── 📁 catboost_info
+│   ├── 📄 catboost_training.json
+│   ├── 📄 learn_error.tsv
+│   ├── 📄 time_left.tsv
+│   └── 📁 learn
+│       └── 📄 events.out.tfevents
+├── 📁 Previews
+│   ├── 📄 Power_bi_dashboard.png
+│   ├── 📄 churned_preview_machine_learning_model.png
+│   └── 📄 not_churned_preview_machine_learning_model.png
+└── 📁 Dashboard
+    └── 📁 Power Bi
+        └── 📄 Bank_customers_churn_dashboard.pbix
+  ```
 
 
 ---
